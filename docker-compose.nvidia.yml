@@ -47,7 +47,7 @@ services:
     runtime: nvidia
     environment:
       - DISPLAY=:1
-      - VGL_DISPLAY=:0
+      - VGL_DISPLAY=:1
     volumes:
       - /tmp/.X11-unix/X0:/tmp/.X11-unix/X0
     volumes_from:
