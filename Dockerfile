@@ -31,8 +31,7 @@ USER developer
 ENV CC /usr/bin/gcc
 ENV CXX /usr/bin/g++
 
-RUN rosdep update \
-    apt-get install libgsl0-dev
+RUN rosdep update
 RUN echo "source /usr/share/gazebo/setup.sh" >> ~/.bashrc
 RUN echo "source /opt/wrs/setup.sh" >> ~/.bashrc
 RUN echo 'export ROS_IP=`hostname -i`' >> ~/.bashrc

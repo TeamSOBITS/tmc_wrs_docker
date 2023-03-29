@@ -12,6 +12,17 @@ RUN curl -fsSL https://developer.download.nvidia.com/compute/cuda/repos/ubuntu18
 RUN apt-key adv --fetch-keys https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/3bf863cc.pub
 RUN apt-key adv --fetch-keys https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/7fa2af80.pub
 
+RUN apt-get update && \
+    apt-get install -y python-wstool && \
+    apt-get install -y ros-${ROS_DISTRO}-pcl-ros && \
+    apt-get install -y ros-${ROS_DISTRO}-laser-scan-matcher && \
+    apt-get install -y ros-${ROS_DISTRO}-depthimage-to-laserscan && \
+    apt-get install -y ros-${ROS_DISTRO}-scan-tools
+    install libgsl0-dev
+
+# RUN apt-get update && \
+#     apt install -y libgsl-dev ros-${ROS_DISTRO}-pcl-ros
+
 RUN apt-get update && apt-get install -y --no-install-recommends \
     cuda-cudart-11-7 \
     cuda-compat-11-7 \
